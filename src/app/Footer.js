@@ -13,6 +13,8 @@ const footer = () => {
                         src={instagram}
                         width={500}
                         height={500}
+                        alt=""
+
                         />
                     </a>
                     <a href="https://www.linkedin.com/in/metin-nabiyev-8409a0298/" alt="linkedin link" id="linkedin2" rel="noreferrer" target="_blank">
@@ -20,6 +22,8 @@ const footer = () => {
                         src={linkedin}
                         width={500}
                         height={500}
+                        alt=""
+
                         />
                     </a>
                 </div>

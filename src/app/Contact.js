@@ -17,6 +17,7 @@ const Contact = () => {
                         src={mail}
                         width={500}
                         height={500}
+                        alt=""
                         />
 
                         </a>
@@ -33,6 +34,8 @@ const Contact = () => {
                         src={whatsapp}
                         width={500}
                         height={500}
+                        alt=""
+
                         />
                         </a>
                     </span>

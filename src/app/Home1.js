@@ -10,6 +10,8 @@ const Home = () => {
                 src={metePhoto}
                 width={500}
                 height={500}
+                alt=""
+
                 />
                 <div className="hero-text">
                     <h1>Web Developer</h1>
@@ -20,12 +22,16 @@ const Home = () => {
                         src={linkedin}
                         width={500}
                         height={500}
+                        alt=""
+
                         />
                         </a>
                         <a href="https://github.com/Metobolite" alt="github link" id="github" rel="noreferrer" target="_blank"><Image 
                         src={github}
                         width={500}
                         height={500}
+                        alt=""
+
                         />
                         </a>
                     </span>
