@@ -1,5 +1,5 @@
 import instagram from './photos/instagram.png'
-import linkedin from './photos/linkedin.png'
+import linkedin from './photos/linkedin3.png'
 import Image from 'next/image';
 
 const footer = () => {

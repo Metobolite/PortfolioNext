@@ -1,4 +1,4 @@
-const Projects = () => {
+export default function Projects() {
     return (
         <div id = "project" className="project">
             <div className="pt-28">
@@ -13,4 +13,3 @@ const Projects = () => {
     );
 }
  
-export default Projects;

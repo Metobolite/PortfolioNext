@@ -40,8 +40,7 @@ html{
 }
 .navbar a {
   text-decoration: none;
-  padding: 9px;
-  @apply transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300;
+  @apply transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 p-2;
 }
 .navbar ul{
   @apply hidden md:flex;
@@ -63,7 +62,7 @@ html{
   @apply hidden
 }
 .mobile-nav-open{
-  @apply flex h-[100vh] w-full bg-white items-center justify-center
+  @apply flex h-[100vh] w-full bg-white items-center justify-center 
 }
 .content {
   margin: 40px auto;
@@ -78,10 +77,12 @@ html{
 #linkedin{
   @apply items-center flex relative 
   justify-center h-6 w-6 bg-cover [text-indent:-999px] mt-[15px]
+  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
 }
 #github{
   @apply  items-center flex relative justify-center h-6 w-[1.53rem] 
   bg-cover [text-indent:-999px] mt-[15px]
+  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
 }
 .home span{
   @apply flex gap-4 justify-center
@@ -115,7 +116,7 @@ html{
 
 }
 .contactAll{
-  @apply flex-col md:flex-row mt-[150px] bg-[#2A3132] md:h-[50vh] pt-24 md:pr-48 pb-32 md:pl-32 text-[1.1rem]
+  @apply flex flex-col items-center md:flex-row mt-[150px] bg-[#2A3132] md:h-[60vh] pt-24 pb-32 md:pl-32 text-[1.1rem]
 }
 .contactInfo{
   @apply mt-12 flex gap-12 md:gap-48 items-center flex-col md:flex-row
@@ -156,10 +157,12 @@ html{
 }
 
 #linkedin2{
-  @apply flex items-center h-[1.4rem] w-[1.4rem] bg-cover [text-indent:-999px]
+  @apply flex items-center h-[1.4rem] w-[1.4rem] bg-cover [text-indent:-999px] 
+  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
 }
 #instagram{
-  @apply bg-cover flex items-center h-8 w-8 [text-indent:-999px] rounded-[100%] border-[white]
+  @apply bg-cover flex items-center h-8 w-8 [text-indent:-999px] rounded-[100%] border-[white] 
+  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
 }
 .footerSocial{
   @apply items-center flex gap-4

@@ -1,51 +1,44 @@
+"use client"
+import {motion as m} from "framer-motion";
+import { useRef } from 'react';
+import Link from "next/link";
+import meteContact from "./photos/metecontact.png"
 import Image from "next/image";
-import whatsapp from './photos/whatsapp1.png'
-import mail from './photos/mail2.png'
+
 const Contact = () => {
+    const scrollRef = useRef(null)
+
     return (
-        <div id="contact" className="contactAll">
-            <div className="contact">
-                <h3 className="text-[white]">Contact 👌</h3>
-                <br />
-                <h2 className="text-[white]">You Can Contact Me From Here</h2>
-            </div>
-            <div className="contactInfo">
-                <div className="mailAll">
-                    <span>
-                        <a href="https://outlook.live.com/" alt="mail icon" id="mail" rel="noreferrer">
-                        <Image className = " flex h-[3.7rem] w-14 bg-cover [text-indent:-999px] rounded-[100%] items-center"
-                        src={mail}
-                        width={500}
-                        height={500}
-                        alt=""
-                        />
+        <div ref={scrollRef} style={{ overflow: "hidden"}}>
+            <m.div
+            initial={{y:20, opacity: 0 }}
+            whileInView={{y:0 ,opacity: 1 }}
+            viewport={{ root: scrollRef }}
+            transition={{ease: "easeInOut", duration: 1.2}}
 
-                        </a>
-                    </span>
-                    <div className="mail">
-                       <h3 className="text-[white]">Mail</h3>
-                       <p className="text-[white]">nebiyev02@hotmail.com</p>
+            >
+            <div id="contact" className="contactAll">
+                <div className="flex flex-col md:flex-col">
+                    <div className="contact">
+                        <h3 className="text-[white]">Contact</h3>
+                        <br />
+                        <h2 className="text-[white]">You Can Contact Me From Here</h2>
+                    </div>
+                    <div className="contactInfo">
+                        <Link href="contact" className="text-black bg-white text-center p-4 rounded-xl font-bold hover:-translate-y-1 hover:scale-110 duration-300 delay-150">Contact Page</Link>
                     </div>
                 </div>
-                <div className="numberAll">
-                    <span>
-                        <a href="https://web.whatsapp.com/" alt="whatsapp icon" id="whatsapp" rel="noreferrer">
-                        <Image className ="flex items-center h-[2.8rem] w-[3.1rem] bg-cover [text-indent:-999px] rounded-[100%]"
-                        src={whatsapp}
-                        width={500}
-                        height={500}
-                        alt=""
-
-                        />
-                        </a>
-                    </span>
-                    <div className="number">
-                        <h3 className="text-[white]">Business Whatsapp</h3>
-                        <p className="text-[white]">+905528448322</p>
-                    </div>
+                <div className="flex justify-center">
+                    <Image
+                    src={meteContact}
+                    width={500}
+                    height={500}
+                    quality={100}
+                    />
                 </div>
-            </div>
-        </div>    
+            </div>    
+            </m.div>
+        </div> 
      );
 }
  

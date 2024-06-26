@@ -4,9 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 
-
 const Navbar = () => {
-
     const [fix, setFix] = useState(false)
 
     function setFixed() {
@@ -40,7 +38,7 @@ const Navbar = () => {
                         <Link href="/project">Projects</Link>
                         <Link href="/about">About</Link>
                         <Link href="/contact">Contact</Link>
-                        <Link href ="/feedback" className="rounded-[20%] text-xl transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ...">Feedbacks</Link>
+                        <Link href ="/feedback" className="rounded-xl text-xl transition ease-in-out delay-150 bg-gray-500 hover:-translate-y-1 hover:scale-110 hover:bg-gray-600 duration-300 ...">Feedbacks</Link>
                     </ul>
                     <button onClick={handleClick}
                         className={`flex flex-col justify-center items-center md:hidden ${isOpen ? 
@@ -62,6 +60,7 @@ const Navbar = () => {
                                         }`} >
                         </span>
                     </button>
+                    
                     <div className={isOpen ? 'mobile-nav-open' : 'mobile-nav-close'}>
                         <div className="buttonMobile">
                             <button onClick={handleClick}
@@ -87,11 +86,11 @@ const Navbar = () => {
                                 </button>
                         </div>
                             <li className="flex">
-                                <Link href="/">Home</Link>
-                                <Link href="/project">Projects</Link>
-                                <Link href="/about">About</Link>
-                                <Link href="/contact">Contact</Link>
-                                <Link href ="/feedback" className="rounded-[10%] text-xl transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ...">Feedbacks</Link>
+                                <Link href="/" onClick={handleClick}>Home</Link>
+                                <Link href="/project" onClick={handleClick}>Projects</Link>
+                                <Link href="/about" onClick={handleClick}>About</Link>
+                                <Link href="/contact" onClick={handleClick}>Contact</Link>
+                                <Link href ="/feedback" className="rounded-xl text-xl transition ease-in-out delay-150 bg-gray-500 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 duration-300 ..." onClick={handleClick}>Feedbacks</Link>
                             </li>
                     </div>
                 </div>
