@@ -20,19 +20,19 @@ const Navbar = () => {
         setIsOpen(!isOpen);
     };
 
-    window.addEventListener("scroll",setFixed)
-    const goTop = () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-    });
-};
+//     window.addEventListener("scroll",setFixed)
+//     const goTop = () => {
+//         window.scrollTo({
+//           top: 0,
+//           behavior: "smooth",
+//     });
+// };
 
     return (
         <nav className={fix ? 'navbar fixed' : 'navbar'}>
             <div className="navbar1">
                 <div className="links">
-                    <button className={isOpen ? 'hidden' : 'flex'}><h1 onClick={goTop}>Metin Nabiyev</h1></button>
+                    <button className={isOpen ? 'hidden' : 'flex'}><h1>Metin Nabiyev</h1></button>
                     <ul>
                         <Link href="/">Home</Link>
                         <Link href="/project">Projects</Link>
