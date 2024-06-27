@@ -37,11 +37,13 @@ export default function Contact() {
     return (
         <div ref={scrollRef} style={{ overflow: "hidden" }}>
             <m.div
+            initial={{x:-600,opacity:0}}
+            whileInView={{x:0,opacity:1}}
             // variants={variants}
             // initial={variants.initial}
             // whileInView={variants.whileInView}
-            // viewport={{ root: scrollRef }}
-            // transition={{ease: "easeInOut", duration: 1.2}}
+            viewport={{ root: scrollRef }}
+            transition={{ease: "easeInOut", duration: 1.2}}
 
             >
             <div id="contact" className="contactAll">
