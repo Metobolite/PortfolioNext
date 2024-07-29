@@ -99,11 +99,11 @@ html{
   padding: 5rem;
 }
 .aboutAll{
-  @apply mt-[150px] md:ml-8 items-center justify-center flex flex-col md:flex-row text-center md:gap-12;
+  @apply mt-[150px] items-center justify-center flex flex-col md:flex-row text-center;
 }
 
 .aboutText{
-  @apply flex-col md:flex-row text-center justify-center items-center md:text-left md:pr-32
+  @apply md:w-[60%] flex-col md:flex-row text-center justify-center items-center md:text-left md:pr-20 md:pl-20
 }
 .aboutText h2{
   @apply pt-4 pl-2 text-[1.4rem] items-center text-center md:text-left text-green-700 font-bold
@@ -116,7 +116,7 @@ html{
 
 }
 .contactAll{
-  @apply flex flex-col items-center md:flex-row mt-[150px] bg-[#2A3132] md:h-[60vh] pt-24 pb-32 md:pl-32 text-[1.1rem]
+  @apply flex flex-col mt-[150px] bg-[#2A3132] md:h-[60vh] pt-24 pb-32 md:pl-32 text-[1.1rem] 
 }
 .contactInfo{
   @apply mt-12 flex gap-12 md:gap-48 items-center flex-col md:flex-row
@@ -125,7 +125,10 @@ html{
   font-size: 1.4rem;
 }
 .contact{
-  @apply text-center md:text-left
+  @apply text-center md:text-left 
+}
+.imageMete{
+  margin:-12em 0 0 0;
 }
 .contactInfo span{
   display: flex;

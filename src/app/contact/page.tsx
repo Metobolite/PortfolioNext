@@ -4,44 +4,17 @@ import { useRef } from 'react';
 import Image from "next/image";
 import whatsapp from '../photos/whatsapp1.png'
 import mail from '../photos/mail2.png'
-import { useMediaQuery } from "@uidotdev/usehooks";
 
 
 export default function Contact() {
 
     const scrollRef = useRef(null);
-    // const isDesktop = useMediaQuery('(min-width:600px)');
-    // const variants = isDesktop ? 
-    // {
-    //     initial:{
-    //         x:-1200,
-    //         opacity: 0 
-    //     },
-    //     whileInView:{
-    //         x:0 ,
-    //         opacity: 1 
-    //     },
-    // }
-    // :
-    // {
-    //     initial:{
-    //         y:30,
-    //         opacity: 0 
-    //     },
-    //     whileInView:{
-    //         y:0 ,
-    //         opacity: 1 
-    //     },
-    // }
 
     return (
         <div ref={scrollRef} style={{ overflow: "hidden" }}>
             <m.div
-            initial={{x:-600,opacity:0}}
+            initial={{x:-300,opacity:0}}
             whileInView={{x:0,opacity:1}}
-            // variants={variants}
-            // initial={variants.initial}
-            // whileInView={variants.whileInView}
             viewport={{ root: scrollRef }}
             transition={{ease: "easeInOut", duration: 1.2}}
 
