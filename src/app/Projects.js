@@ -8,21 +8,21 @@ const Projects = () => {
     
     return (
         <div ref={scrollRef} style={{ overflow: "hidden" }}>
-            <m.div
-            initial={{y:20 ,opacity: 0 }}
-            whileInView={{y:0, opacity: 1 }}
-            viewport={{ root: scrollRef }}
-            transition={{ease: "easeInOut", duration: 1.2}}
-            >
-                <div id = "project" className="project">
+            <div id = "project" className="project">
                 <div className="contents">
-                    <h1>Projects</h1>
-                    <div className="projectQrCode">
-                        <h2>Still in Development...</h2>
-                    </div>
+                    <m.div
+                    initial={{y:20 ,opacity: 0 }}
+                    whileInView={{y:0, opacity: 1 }}
+                    viewport={{ root: scrollRef }}
+                    transition={{ease: "easeInOut", duration: 1.2}}
+                    >
+                        <h1 className="text-center">Projects</h1>
+                        <div className="text-center">
+                            <h2>Still in Development...</h2>
+                        </div>
+                    </m.div>
                 </div>
             </div>
-            </m.div>
         </div>
     );
 }

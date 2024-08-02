@@ -11,7 +11,8 @@ export default function about() {
                 src={coding}
                 width={500}
                 height={500}
-                alt=""
+                alt="feedback"
+                priority
                 />
                 <div className="aboutText m-2">
                     <h2>About Me</h2>

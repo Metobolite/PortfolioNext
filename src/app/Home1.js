@@ -26,7 +26,8 @@ const Home = () => {
                         width={500}
                         height={500}
                         quality={100}
-                        alt=""
+                        alt="metin"
+                        priority={false}
 
                         />
                         <div className="hero-text">
@@ -38,7 +39,8 @@ const Home = () => {
                                 src={linkedin}
                                 width={500}
                                 height={500}
-                                alt=""
+                                alt="linked"
+                                priority
 
                                 />
                                 </a>
@@ -46,7 +48,8 @@ const Home = () => {
                                 src={github}
                                 width={500}
                                 height={500}
-                                alt=""
+                                alt="github"
+                                priority
 
                                 />
                                 </a>

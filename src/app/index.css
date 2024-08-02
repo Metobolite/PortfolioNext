@@ -2,6 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   margin: 0;
   font-family: "Open Sans", sans-serif;
@@ -9,9 +10,57 @@
   box-sizing: border-box;
   scrollbar-width: thin;
 }
-html{
-  scroll-behavior:smooth ;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.footerAll {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  z-index: 100;
+}
+  
+body {
+  will-change: opacity, transform, filter, background;
+  transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease, background 0.8s ease;
+}
+
+.page-transition {
+  opacity: 0.5;
+  background: rgb(30, 32, 34);
+  filter: blur(3px);
+  transform: scale(2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar {
   padding: 20px;
   margin: 0;
@@ -20,7 +69,7 @@ html{
   position: fixed;
   width: 100%;
   z-index: 200;
-  box-shadow: 0 0 10px rgba(0,0,0,.09)
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
 }
 .navbar.fixed{
   background-color: #2A3132;
@@ -55,14 +104,17 @@ html{
   font-size: large;
   @apply text-black gap-6 flex-col text-center;
 }
-/* .buttonMobile{
-  @apply 
-} */
-.mobile-nav-close{
-  @apply hidden
+.mobile-nav-close {
+  @apply flex h-[100vh] w-full bg-white items-center justify-center fixed inset-0 -translate-x-full; 
+  transition: transform 0.3s ease-in-out;
 }
-.mobile-nav-open{
-  @apply flex h-[100vh] w-full bg-white items-center justify-center 
+.mobile-nav-open {
+  @apply flex h-[100vh] w-full bg-white items-center justify-center fixed inset-0 translate-x-0; 
+  transition: transform 0.3s ease-in-out;
+  z-index:2000;
+}
+.mobile-nav-open-active {
+  overflow: hidden; 
 }
 .content {
   margin: 40px auto;
@@ -103,7 +155,7 @@ html{
 }
 
 .aboutText{
-  @apply md:w-[60%] flex-col md:flex-row text-center justify-center items-center md:text-left md:pr-20 md:pl-20
+  @apply md:w-[90%] md:text-left items-center pr-5 pl-5 md:pr-20 md:pl-20
 }
 .aboutText h2{
   @apply pt-4 pl-2 text-[1.4rem] items-center text-center md:text-left text-green-700 font-bold
@@ -115,20 +167,17 @@ html{
   @apply md:pl-2 pt-8 text-[1.1rem] items-center md:text-left 
 
 }
-.contactAll{
-  @apply flex flex-col mt-[150px] bg-[#2A3132] md:h-[60vh] pt-24 pb-32 md:pl-32 text-[1.1rem] 
-}
-.contactInfo{
+.moreInfo{
   @apply mt-12 flex gap-12 md:gap-48 items-center flex-col md:flex-row
 }
 .contactAll h3 {
   font-size: 1.4rem;
 }
+.contactAll{
+  @apply flex flex-col mt-[150px] bg-[#2A3132] md:h-[60vh] md:pt-24 pb-32 md:pl-32 text-[1.1rem] 
+}
 .contact{
   @apply text-center md:text-left 
-}
-.imageMete{
-  margin:-12em 0 0 0;
 }
 .contactInfo span{
   display: flex;

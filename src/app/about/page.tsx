@@ -8,7 +8,7 @@ export default function about() {
     const scrollRef = useRef(null);
     return (
         <div>
-            <h1 className="pt-40 items-center justify-center text-center font-bold text-xl">
+            <h1 className="pt-40 items-center justify-center text-center font-bold text-xl pl-5 pr-5">
                 Its pleasure to host you in my web page 😄</h1>
             <div id="about" className="pt-20 pb-12 md:ml-8 items-center justify-center flex flex-col md:flex-row text-center ">
                 <m.div
@@ -21,7 +21,8 @@ export default function about() {
                     src={coding}
                     width={500}
                     height={500}
-                    alt=""
+                    alt="about"
+                    priority
                     />
                 </m.div>
                 <div className="aboutText m-2">

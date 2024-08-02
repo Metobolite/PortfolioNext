@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import "./index.css";
 import Navbar from './navbar';
 import Footer from './Footer.js';
-
+import Cat from './Cat';
+import { ViewTransitions } from 'next-view-transitions';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,14 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <ViewTransitions>
+      <html lang="en">
+        <body className={inter.className}>
           <div className="App">
             <Navbar />
             {children}
+            <Cat />
             <Footer />
           </div>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

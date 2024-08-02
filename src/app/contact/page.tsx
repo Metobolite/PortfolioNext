@@ -12,20 +12,20 @@ export default function Contact() {
 
     return (
         <div ref={scrollRef} style={{ overflow: "hidden" }}>
-            <m.div
-            initial={{x:-300,opacity:0}}
-            whileInView={{x:0,opacity:1}}
-            viewport={{ root: scrollRef }}
-            transition={{ease: "easeInOut", duration: 1.2}}
-
-            >
             <div id="contact" className="contactAll">
+                <m.div
+                initial={{x:-300,opacity:0}}
+                whileInView={{x:0,opacity:1}}
+                viewport={{ root: scrollRef }}
+                transition={{ease: "easeInOut", duration: 1.2}}
+
+                >
                 <div className="contact">
                     <h3 className="text-[white]">Contact 👌</h3>
                     <br />
                     <h2 className="text-[white]">You Can Contact Me From Here</h2>
                 </div>
-                <div className="contactInfo">
+                <div className="moreInfo">
                     <div className="mailAll">
                         <span>
                             <a href="https://outlook.live.com/" id="mail" rel="noreferrer">
@@ -51,6 +51,7 @@ export default function Contact() {
                             width={500}
                             height={500}
                             alt="whatsapp icon"
+                            priority
                             />
                             </a>
                         </span>
@@ -60,9 +61,8 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
+                </m.div>
             </div>    
-            </m.div>
         </div> 
      );
 }
- 
