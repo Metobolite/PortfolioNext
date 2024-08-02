@@ -58,9 +58,9 @@ const Cat: React.FC = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => moveCat(0, 2000), 2000); // Genel hareket için 2 saniye
-
+  
     return () => clearInterval(intervalId); // Temizleme
-  }, []);
+  }, [moveCat]); // moveCat bağımlılık dizisine eklendi
 
   const handleMouseEnter = () => {
     moveCat(100, 1000); // Fare üzerine geldiğinde 1 saniye sürede hızlı hareket ettir
