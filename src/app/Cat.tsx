@@ -16,19 +16,21 @@ const Cat: React.FC = () => {
     const cat = catRef.current;
     const navbar = document.querySelector('.navbar') as HTMLElement;
     const footer = document.querySelector('.footerAll') as HTMLElement;
-
+  
     if (!cat || !navbar || !footer) return;
-
+  
     const navbarHeight = navbar.offsetHeight || 0;
     const footerHeight = footer.offsetHeight || 0;
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
-
+  
     const maxX = windowWidth - (cat.offsetWidth || 0);
     const maxY = windowHeight - navbarHeight - footerHeight - (cat.offsetHeight || 0);
-
-    let randomX, randomY;
-
+  
+    // Varsayılan değerler
+    let randomX = 0;
+    let randomY = 0;
+  
     switch (getRandomDirection()) {
       case 'top-left':
         randomX = Math.random() * (maxX / 2) + distance;
@@ -47,11 +49,11 @@ const Cat: React.FC = () => {
         randomY = Math.random() * (maxY / 2) + (windowHeight / 2 - (cat.offsetHeight || 0) - distance);
         break;
     }
-
+  
     // Konumu görünür alan içinde sınırlayın
     randomX = Math.max(0, Math.min(maxX, randomX));
     randomY = Math.max(navbarHeight, Math.min(maxY + navbarHeight, randomY));
-
+  
     cat.style.transition = `transform ${speed}ms ease`;
     cat.style.transform = `translate(${randomX}px, ${randomY}px)`;
   };
