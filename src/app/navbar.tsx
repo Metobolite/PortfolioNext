@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'next-view-transitions';
-import { TransitionLink } from "../components/utils/TransitionLink";
 
 const Navbar = () => {
     const [fix, setFix] = useState(false);
@@ -19,11 +18,6 @@ const Navbar = () => {
 
     const handleClick = () => {
         setIsOpen(!isOpen);
-        if (isOpen) {
-            document.body.classList.remove('mobile-nav-open-active');
-        } else{
-            document.body.classList.add('mobile-nav-open-active');
-        }
     };
 
     useEffect(() => {
@@ -49,7 +43,7 @@ const Navbar = () => {
                         <Link href="/project">Projects</Link>
                         <Link href="/about">About</Link>
                         <Link href="/contact">Contact</Link>
-                        <TransitionLink href="/feedback" className="rounded-xl text-xl transition ease-in-out delay-150 bg-gray-500 hover:-translate-y-1 hover:scale-110 hover:bg-gray-600 duration-300 ...">Feedbacks</TransitionLink>
+                        <Link href="/feedback" className="rounded-xl text-xl transition ease-in-out delay-150 bg-gray-500 hover:-translate-y-1 hover:scale-110 hover:bg-gray-600 duration-300 ...">Feedbacks</Link>
                     </ul>
                     <button onClick={handleClick}
                         className={`flex flex-col justify-center items-center md:hidden ${isOpen ? 'hidden' : 'flex'}`}>

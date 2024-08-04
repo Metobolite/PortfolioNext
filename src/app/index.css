@@ -23,13 +23,6 @@ html, body {
   min-height: 100vh;
 }
 
-.navbar {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
 .content {
   flex: 1;
   display: flex;
@@ -37,25 +30,7 @@ html, body {
   justify-content: center;
   position: relative;
 }
-
-.footerAll {
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  z-index: 100;
-}
   
-body {
-  will-change: opacity, transform, filter, background;
-  transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease, background 0.8s ease;
-}
-
-.page-transition {
-  opacity: 0.5;
-  background: rgb(30, 32, 34);
-  filter: blur(3px);
-  transform: scale(2);
-}
 
 html {
   scroll-behavior: smooth;
@@ -64,18 +39,20 @@ html {
 .navbar {
   padding: 20px;
   margin: 0;
-  background-color: #2A3132;
+  background-color: rgb(52,72,90);
   font-weight: bold;
-  position: fixed;
-  width: 100%;
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
   z-index: 200;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+  transition: background-color 0.3s ease-in-out;
 }
-.navbar.fixed{
-  background-color: #2A3132;
-  transition: .3s, ease-in-out;
-  position: fixed;
+
+.navbar.fixed {
+  background-color: rgb(69, 95, 118);
 }
+
 .navbar h1 {
   @apply text-white; 
   border: 0;
@@ -111,10 +88,7 @@ html {
 .mobile-nav-open {
   @apply flex h-[100vh] w-full bg-white items-center justify-center fixed inset-0 translate-x-0; 
   transition: transform 0.3s ease-in-out;
-  z-index:2000;
-}
-.mobile-nav-open-active {
-  overflow: hidden; 
+  z-index:200;
 }
 .content {
   margin: 40px auto;
@@ -140,7 +114,8 @@ html {
   @apply flex gap-4 justify-center
 }
 .contents{
-  @apply items-center flex flex-col pb-[100px] bg-[#2A3132] font-bold
+  @apply items-center flex flex-col pb-[100px] font-bold;
+  background-color: rgb(52,72,90);
 }
 .contents h1{
   @apply text-white;
@@ -168,13 +143,15 @@ html {
 
 }
 .moreInfo{
-  @apply mt-12 flex gap-12 md:gap-48 items-center flex-col md:flex-row
+  @apply mt-12 flex gap-12 md:gap-20 items-center flex-col md:flex-row 
 }
 .contactAll h3 {
   font-size: 1.4rem;
 }
 .contactAll{
-  @apply flex flex-col mt-[150px] bg-[#2A3132] md:h-[60vh] md:pt-24 pb-32 md:pl-32 text-[1.1rem] 
+  @apply flex flex-col mt-[150px] md:h-[60vh] md:pt-24 pb-32 md:pl-32 text-[1.1rem];
+  background-color: rgb(52,72,90);
+ 
 }
 .contact{
   @apply text-center md:text-left 
@@ -197,7 +174,9 @@ html {
   @apply flex items-center gap-4
 }
 .footerAll{
-  @apply bg-[rgb(51,59,60)] px-[0] py-16 md:pl-64 md:pr-80
+  @apply px-[0] py-16 md:pl-64 md:pr-80;
+  background-color: rgb(35, 49, 60);
+
 }
 .footerAll h3 {
   @apply text-[white] text-[larger];

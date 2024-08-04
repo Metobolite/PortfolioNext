@@ -70,7 +70,7 @@ const Cat: React.FC = () => {
 
   const handleClick = () => {
     moveCat(150, 1000); // Tıklandığında 1 saniye sürede hızlı hareket ettir
-    setNotification('Dokunma!'); // Bildirim ekle
+    setNotification("Don't Touch!"); // Bildirim ekle
 
     // 1.5 saniye sonra bildirim mesajını temizle
     setTimeout(() => {
