@@ -149,9 +149,7 @@ html {
   font-size: 1.4rem;
 }
 .contactAll{
-  @apply flex flex-col mt-[150px] md:h-[60vh] md:pt-24 pb-32 md:pl-32 text-[1.1rem];
-  background-color: rgb(52,72,90);
- 
+  @apply flex flex-col mt-[100px] md:pt-24 pb-40 text-[1.1rem] items-center;
 }
 .contact{
   @apply text-center md:text-left 

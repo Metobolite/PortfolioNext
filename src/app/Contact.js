@@ -10,7 +10,7 @@ const Contact = () => {
 
     return (
         <div ref={scrollRef} style={{ overflow: "hidden"}}>
-            <div className="contactAll flex md:flex-row items-center gap-32 justify-center">
+            <div className="flex flex-col mt-[150px] md:h-[60vh] md:pt-24 pb-32 md:pl-32 text-[1.1rem] md:flex-row items-center gap-32 justify-center bg-[#34485a]">
                 <m.div
                 initial={{y:20, opacity: 0 }}
                 whileInView={{y:0 ,opacity: 1 }}
