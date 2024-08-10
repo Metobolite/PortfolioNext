@@ -17,7 +17,7 @@ const Contact = () => {
                 viewport={{ root: scrollRef }}
                 transition={{ease: "easeInOut", duration: 1.2}}
                 >
-                    <div className="flex md:flex-row flex-col items-center md:gap-32 ">
+                    <div className="flex md:flex-row flex-col items-center md:gap-32">
                         <div className="imageMete flex justify-center w-96 h-auto mb-20 md:mb-40">
                             <Image
                             src={meteContact}

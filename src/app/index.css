@@ -114,16 +114,7 @@ html {
   @apply flex gap-4 justify-center
 }
 .contents{
-  @apply items-center flex flex-col pb-[100px] font-bold;
-  background-color: rgb(52,72,90);
-}
-.contents h1{
-  @apply text-white;
-  padding: 2rem;
-}
-.contents h2{
-  @apply text-white;
-  padding: 5rem;
+  @apply flex
 }
 .aboutAll{
   @apply mt-[150px] items-center justify-center flex flex-col md:flex-row text-center;

@@ -27,7 +27,6 @@ const Cat: React.FC = () => {
     const maxX = windowWidth - (cat.offsetWidth || 0);
     const maxY = windowHeight - navbarHeight - footerHeight - (cat.offsetHeight || 0);
   
-    // Varsayılan değerler
     let randomX = 0;
     let randomY = 0;
   
@@ -59,20 +58,19 @@ const Cat: React.FC = () => {
   };
 
   useEffect(() => {
-    const intervalId = setInterval(() => moveCat(0, 2000), 2000); // Genel hareket için 2 saniye
+    const intervalId = setInterval(() => moveCat(0, 2000), 2000); 
   
-    return () => clearInterval(intervalId); // Temizleme
-  }, [moveCat]); // moveCat bağımlılık dizisine eklendi
+    return () => clearInterval(intervalId); 
+  }, [moveCat]); 
 
   const handleMouseEnter = () => {
-    moveCat(100, 1000); // Fare üzerine geldiğinde 1 saniye sürede hızlı hareket ettir
+    moveCat(100, 1000);
   };
 
   const handleClick = () => {
-    moveCat(150, 1000); // Tıklandığında 1 saniye sürede hızlı hareket ettir
-    setNotification("Don't Touch!"); // Bildirim ekle
+    moveCat(250, 1000); 
+    setNotification("Don't Touch!");
 
-    // 1.5 saniye sonra bildirim mesajını temizle
     setTimeout(() => {
       setNotification(null);
     }, 1500);
