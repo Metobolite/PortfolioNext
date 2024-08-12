@@ -1,19 +1,30 @@
-"use client"
-import React, { useState, FormEvent } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+"use client";
+import React, { useState, FormEvent, ChangeEvent } from 'react';
+import dynamic from 'next/dynamic';
+
+const ToastContainer = dynamic(() => import('react-toastify').then(mod => mod.ToastContainer), { ssr: false });
+import CustomSpinner from './CustomSpinner';
 import 'react-toastify/dist/ReactToastify.css';
-import { Spinner } from '@chakra-ui/react';
+import { toast } from 'react-toastify';
+import { Link } from 'next-view-transitions';
+
+interface FormData {
+  userName: string;
+  email: string;
+  header: string;
+  message: string;
+}
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     userName: '',
     email: '',
     header: '',
     message: '',
   });
 
-  const handleChange = (e: { target: { name: string; value: string; }; }) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -23,8 +34,7 @@ export default function Page() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsLoading(true);
-    
-    // Form alanlarını kontrol et
+
     const hasEmptyFields = !formData.userName || !formData.header || !formData.message;
 
     if (hasEmptyFields) {
@@ -37,6 +47,8 @@ export default function Page() {
     }
 
     try {
+      localStorage.setItem('formData', JSON.stringify(formData)); // Veriyi localStorage'a kaydet
+
       const response = await fetch('/api/submit', {
         method: 'POST',
         headers: {
@@ -103,10 +115,11 @@ export default function Page() {
         placeholder=" Enter Your Message"
       ></textarea>
 
-      <button type="submit" disabled={isLoading} className="bg-slate-100 text-black rounded-md w-40 h-9 mb-20 font-bold text-lg border-2 border-slate-600">
-        {isLoading ? <Spinner /> : 'Submit'}
+      <button type="submit" disabled={isLoading} className="bg-slate-100 text-black rounded-md w-40 h-9 mb-10 font-bold text-lg border-2 border-slate-600">
+        {isLoading ? <CustomSpinner /> : 'Submit'}
       </button>
-      <div style={{ zIndex: 9999, position: 'relative' }}>
+      <Link href ="/ShowDataPage" className="rounded-md border-2 border-black text-xl font-bold h-9 transition ease-in-out delay-150 w-40 text-center hover:-translate-y-1 hover:scale-110 hover: duration-300 ...">Feedbacks</Link>
+      <div style={{ zIndex: 200, position: 'relative' }}>
         <ToastContainer 
           position="top-right"
           autoClose={3000}
