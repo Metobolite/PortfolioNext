@@ -82,7 +82,7 @@ export default function Page() {
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col items-center pt-36 gap-8">
-      <h2 className="text-xl font-bold text-green-800">Feedback</h2>
+      <h2 className="text-xl font-bold text-slate-600">Please Send Us Your Feedback :)</h2>
       <input
         type="text"
         name="userName"
@@ -115,10 +115,10 @@ export default function Page() {
         placeholder=" Enter Your Message"
       ></textarea>
 
-      <button type="submit" disabled={isLoading} className="bg-slate-100 text-black rounded-md w-40 h-9 mb-10 font-bold text-lg border-2 border-slate-600">
+      <button type="submit" disabled={isLoading} className="bg-slate-100 text-black rounded-md w-40 h-9 font-bold text-lg border-2 border-slate-600">
         {isLoading ? <CustomSpinner /> : 'Submit'}
       </button>
-      <Link href ="/ShowDataPage" className="rounded-md border-2 border-black text-xl font-bold h-9 transition ease-in-out delay-150 w-40 text-center hover:-translate-y-1 hover:scale-110 hover: duration-300 ...">Feedbacks</Link>
+      <Link href ="/ShowDataPage" className="rounded-md border-2 border-slate-600 bg-slate-100 text-xl font-bold h-9 transition ease-in-out delay-150 w-40 text-center hover:-translate-y-1 hover:scale-110 hover: duration-300 ...">All Feedbacks</Link>
       <div style={{ zIndex: 200, position: 'relative' }}>
         <ToastContainer 
           position="top-right"

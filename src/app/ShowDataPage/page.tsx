@@ -10,11 +10,12 @@ interface FormData {
 
 export default function ShowDataPage() {
   const [formDataList, setFormDataList] = useState<FormData[]>([]);
+  const [loading, setLoading] = useState<boolean>(true); // Yüklenme durumu için state
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('/api/submit'); // API route'unu çağır
+        const response = await fetch('/api/feedback');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
@@ -22,11 +23,23 @@ export default function ShowDataPage() {
         setFormDataList(data);
       } catch (error) {
         console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false); // Fetch işlemi tamamlandığında yüklenme durumunu false yap
       }
     }
 
     fetchData();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center pt-40">
+        <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
 
   if (formDataList.length === 0) {
     return <p className="pt-40">No data available</p>;

@@ -2,27 +2,16 @@ import React from 'react';
 
 const CustomSpinner = () => {
   return (
-    <div className="spinner-container">
-      <div className="spinner"></div>
+    <div className="spinner">
       <style jsx>{`
-        .spinner-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 300;
-        }
         .spinner {
-          width: 40px;
-          height: 40px;
-          border: 4px solid rgba(0, 0, 0, 0.1);
+          width: 20px; /* Spinner boyutunu küçülttüm */
+          height: 20px;
+          border: 3px solid rgba(0, 0, 0, 0.1);
           border-top-color: #000;
           border-radius: 50%;
           animation: spin 1s linear infinite;
+          margin: auto; /* Spinner'ı ortalamak için auto margin */
         }
 
         @keyframes spin {
