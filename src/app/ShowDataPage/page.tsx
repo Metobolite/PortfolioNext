@@ -1,5 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../../../firebase/clientApp';
 
 interface FormData {
   userName: string;
@@ -14,20 +16,21 @@ export default function ShowDataPage() {
 
   useEffect(() => {
     async function fetchData() {
+      setLoading(true);
       try {
-        const response = await fetch('/api/feedback');
-        if (!response.ok) {
-          throw new Error('Failed to fetch data');
-        }
-        const data = await response.json();
-        setFormDataList(data);
+        const querySnapshot = await getDocs(collection(db, "feedback"));
+        const dataList: FormData[] = [];
+        querySnapshot.forEach((doc) => {
+          dataList.push(doc.data() as FormData);
+        });
+        setFormDataList(dataList);
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
-        setLoading(false); // Fetch işlemi tamamlandığında yüklenme durumunu false yap
+        setLoading(false);
       }
     }
-
+  
     fetchData();
   }, []);
 

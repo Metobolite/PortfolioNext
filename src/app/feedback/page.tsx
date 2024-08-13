@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import dynamic from 'next/dynamic';
+import { collection, addDoc } from "firebase/firestore";
+import { db } from '../../../firebase/clientApp';
 
 const ToastContainer = dynamic(() => import('react-toastify').then(mod => mod.ToastContainer), { ssr: false });
 import CustomSpinner from './CustomSpinner';
@@ -34,9 +36,9 @@ export default function Page() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsLoading(true);
-
+  
     const hasEmptyFields = !formData.userName || !formData.header || !formData.message;
-
+  
     if (hasEmptyFields) {
       setIsLoading(false);
       toast.error('All fields are required except email.', {
@@ -45,32 +47,26 @@ export default function Page() {
       });
       return;
     }
-
+  
     try {
-      localStorage.setItem('formData', JSON.stringify(formData)); // Veriyi localStorage'a kaydet
-
-      const response = await fetch('/api/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      // Firestore'a veri ekle
+      const docRef = await addDoc(collection(db, "feedback"), {
+        userName: formData.userName,
+        email: formData.email,
+        header: formData.header,
+        message: formData.message,
+        timestamp: new Date() // Veriye zaman damgası eklemek isterseniz
       });
-
-      if (!response.ok) {
-        throw new Error('Something went wrong');
-      }
-
-      const data = await response.json();
-      console.log(data);
-
+  
+      console.log("Document written with ID: ", docRef.id);
+  
       toast.success('Form submitted successfully!', {
         position: "top-right",
         autoClose: 3000,
       });
-
+  
     } catch (error) {
-      console.error(error);
+      console.error("Error adding document: ", error);
       toast.error('An error occurred. Please try again.', {
         position: "top-right",
         autoClose: 3000,
