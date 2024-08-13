@@ -3,7 +3,6 @@ import React, { useState, FormEvent, ChangeEvent } from 'react';
 import dynamic from 'next/dynamic';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../../../firebase/clientApp';
-
 const ToastContainer = dynamic(() => import('react-toastify').then(mod => mod.ToastContainer), { ssr: false });
 import CustomSpinner from './CustomSpinner';
 import 'react-toastify/dist/ReactToastify.css';
@@ -49,13 +48,12 @@ export default function Page() {
     }
   
     try {
-      // Firestore'a veri ekle
       const docRef = await addDoc(collection(db, "feedback"), {
         userName: formData.userName,
         email: formData.email,
         header: formData.header,
         message: formData.message,
-        timestamp: new Date() // Veriye zaman damgası eklemek isterseniz
+        timestamp: new Date()
       });
   
       console.log("Document written with ID: ", docRef.id);

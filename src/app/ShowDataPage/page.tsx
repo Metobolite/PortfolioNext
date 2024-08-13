@@ -12,7 +12,7 @@ interface FormData {
 
 export default function ShowDataPage() {
   const [formDataList, setFormDataList] = useState<FormData[]>([]);
-  const [loading, setLoading] = useState<boolean>(true); // Yüklenme durumu için state
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -36,7 +36,7 @@ export default function ShowDataPage() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center pt-40">
+      <div className="flex justify-center items-center pt-40 h-96">
         <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
