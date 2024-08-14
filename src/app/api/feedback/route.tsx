@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     const jsonData = fs.readFileSync(filePath, 'utf8');
     const data = JSON.parse(jsonData);
 
-    data.push(formData); // Yeni form verisini mevcut veriye ekle
+    data.push(formData); 
 
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 

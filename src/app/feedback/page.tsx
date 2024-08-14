@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import dynamic from 'next/dynamic';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from '../../../firebase/clientApp';
 const ToastContainer = dynamic(() => import('react-toastify').then(mod => mod.ToastContainer), { ssr: false });
 import CustomSpinner from './CustomSpinner';
@@ -48,14 +48,18 @@ export default function Page() {
     }
   
     try {
+      const querySnapshot = await getDocs(collection(db, "feedback"));
+      const id = querySnapshot.size + 1;
+  
       const docRef = await addDoc(collection(db, "feedback"), {
+        id: id,
         userName: formData.userName,
         email: formData.email,
         header: formData.header,
         message: formData.message,
-        timestamp: new Date()
       });
   
+      localStorage.setItem('userFormData', JSON.stringify(formData));
       console.log("Document written with ID: ", docRef.id);
   
       toast.success('Form submitted successfully!', {
