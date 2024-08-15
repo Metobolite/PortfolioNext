@@ -126,7 +126,7 @@ export default function ShowDataPage() {
     return (
       <div className="flex justify-center items-center pt-40 h-96">
         <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-          <span className="visually-hidden">Loading...</span>
+          <span className="visually-hidden flex justify-center items-center">Loading</span>
         </div>
       </div>
     );
@@ -142,54 +142,58 @@ export default function ShowDataPage() {
       </h2>
 
       {userFormData && (
-        <div className="border-2 border-blue-500 rounded-lg p-4 mb-4 w-96">
+        <div className="border-2 border-slate-500 rounded-lg p-4 mb-4 w-96 items-center flex flex-col">
           {isEditing ? (
             <>
               <input
                 type="text"
                 name="userName"
+                placeholder=" Edit Your Name"
                 value={userFormData.userName}
                 onChange={handleEditChange}
-                className="rounded-lg border-slate-600 border-2 w-96 h-9 mb-2"
+                className="rounded-lg border-slate-600 border-2 w-96 h-9 mb-2 ml-5"
               />
               <input
                 type="text"
                 name="email"
+                placeholder=" Edit Your Email (Optional)"
                 value={userFormData.email}
                 onChange={handleEditChange}
-                className="rounded-lg border-slate-600 border-2 w-96 h-9 mb-2"
+                className="rounded-lg border-slate-600 border-2 w-96 h-9 mb-2 ml-5"
               />
               <input
                 type="text"
                 name="header"
+                placeholder=" Edit Your Header"
                 value={userFormData.header}
                 onChange={handleEditChange}
-                className="rounded-lg border-slate-600 border-2 w-96 h-9 mb-2"
+                className="rounded-lg border-slate-600 border-2 w-96 h-9 mb-2 ml-5"
               />
               <textarea
                 name="message"
+                placeholder=" Edit Your Message"
                 value={userFormData.message}
                 onChange={handleEditChange}
-                className="rounded-lg border-slate-600 border-2 h-60 w-96 p-2 mb-2"
+                className="rounded-lg border-slate-600 border-2 h-60 w-96 p-2 mb-2 ml-5"
               ></textarea>
-              <button onClick={handleSave} className="bg-green-500 text-white rounded-md w-32 h-9 mb-2">
+              <button onClick={handleSave} className="bg-green-700 text-white rounded-md w-32 h-9">
                 Save
               </button>
             </>
           ) : (
             <>
-              <p><strong>Name: </strong> {userFormData.userName}</p>
-              <p><strong>Email: </strong> {userFormData.email}</p>
-              <p><strong>Header: </strong> {userFormData.header}</p>
-              <p><strong>Message: </strong> {userFormData.message}</p>
+              <p className="flex flex-col items-center"><strong>Name</strong> {userFormData.userName}</p>
+              <p className="flex flex-col items-center"><strong>Header</strong> {userFormData.header}</p>
             </>
           )}
-          <button onClick={() => setIsEditing(!isEditing)} className="bg-blue-500 text-white rounded-md w-32 h-9 mb-2">
-            {isEditing ? 'Cancel' : 'Edit'}
-          </button>
-          <button onClick={handleDelete} className="bg-red-500 text-white rounded-md w-32 h-9">
-            Delete
-          </button>
+          <div className=" pt-3 gap-1 items-center flex flex-row">
+            <button onClick={() => setIsEditing(!isEditing)} className="bg-slate-500 text-white rounded-md w-32 h-9">
+              {isEditing ? 'Cancel' : 'Edit'}
+            </button>
+            <button onClick={handleDelete} className="bg-red-700 text-white rounded-md w-32 h-9">
+              Delete
+            </button>
+          </div>
         </div>
       )}
 
@@ -197,11 +201,10 @@ export default function ShowDataPage() {
         <p className="text-xl text-center font-bold text-green-800">Other Feedbacks</p>
       </div>
       {formDataList.map((formData, index) => (
-        <div key={index} className="border-2 border-green-500 rounded-lg p-4 mb-4 w-96">
-          <p><strong>Name: </strong> {formData.userName}</p>
-          <p><strong>Email: </strong> {formData.email}</p>
-          <p><strong>Header: </strong> {formData.header}</p>
-          <p><strong>Message: </strong> {formData.message}</p>
+        <div key={index} className="border-2 gap-2 items-center flex flex-col border-stone-700 rounded-lg p-2 md:p-4 mb-4 w-96 md:w-[600px]">
+          <p className="flex flex-col items-center"><strong>Name</strong> {formData.userName}</p>
+          <p className="flex flex-col items-center"><strong>Header</strong> {formData.header}</p>
+          <p className="flex flex-col items-center"><strong>Message</strong> {formData.message}</p>
         </div>
       ))}
       <div style={{ zIndex: 200, position: 'relative' }}>

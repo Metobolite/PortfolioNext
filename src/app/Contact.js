@@ -2,7 +2,7 @@
 import {motion as m} from "framer-motion";
 import { useRef } from 'react';
 import Link from "next/link";
-import meteContact from "./photos/metecontact5.png"
+import meteContact from "./photos/metecontact7.png"
 import Image from "next/image";
 
 const Contact = () => {
@@ -18,7 +18,7 @@ const Contact = () => {
                 transition={{ease: "easeInOut", duration: 1.2}}
                 >
                     <div className="flex md:flex-row flex-col items-center md:gap-32">
-                        <div className="imageMete flex justify-center w-96 h-auto mb-20 md:mb-40">
+                        <div className="imageMete flex justify-center w-96 h-auto mb-20 md:mb-0">
                             <Image
                             src={meteContact}
                             width={500}
