@@ -165,6 +165,12 @@ html {
 .footerAll{
   @apply px-[0] py-16 md:pl-64 md:pr-80;
   background-color: rgb(35, 49, 60);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  z-index: 1000;
 
 }
 .footerAll h3 {

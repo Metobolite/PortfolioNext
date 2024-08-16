@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { collection, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from '../../../firebase/clientApp';
 import dynamic from 'next/dynamic';
@@ -122,18 +122,8 @@ export default function ShowDataPage() {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center pt-40 h-96">
-        <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-          <span className="visually-hidden flex justify-center items-center">Loading</span>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="flex flex-col items-center pt-40 pb-40 gap-4">
+    <div className="flex flex-col items-center pt-40 pb-40 gap-4 min-h-screen">
       <h2 className="text-xl text-center font-bold text-green-800">
         Thank you for your feedback!
         <br />
@@ -200,13 +190,15 @@ export default function ShowDataPage() {
       <div>
         <p className="text-xl text-center font-bold text-green-800">Other Feedbacks</p>
       </div>
-      {formDataList.map((formData, index) => (
-        <div key={index} className="border-2 gap-2 items-center flex flex-col border-stone-700 rounded-lg p-2 md:p-4 mb-4 w-96 md:w-[600px]">
-          <p className="flex flex-col items-center"><strong>Name</strong> {formData.userName}</p>
-          <p className="flex flex-col items-center"><strong>Header</strong> {formData.header}</p>
-          <p className="flex flex-col items-center"><strong>Message</strong> {formData.message}</p>
-        </div>
-      ))}
+      <Suspense fallback="Loading...">
+        {formDataList.map((formData, index) => (
+          <div key={index} className="border-2 gap-2 items-center flex flex-col border-stone-700 rounded-lg p-2 md:p-4 mb-4 w-96 md:w-[600px]">
+            <p className="flex flex-col items-center"><strong>Name</strong> {formData.userName}</p>
+            <p className="flex flex-col items-center"><strong>Header</strong> {formData.header}</p>
+            <p className="flex flex-col items-center"><strong>Message</strong> {formData.message}</p>
+          </div>
+        ))}
+      </Suspense>
       <div style={{ zIndex: 200, position: 'relative' }}>
         <ToastContainer 
           position="top-right"

@@ -8,8 +8,8 @@ const Projects = () => {
     
     return (
         <div ref={scrollRef} style={{ overflow: "hidden" }}>
-            <div id = "project" className="pt-20">
-                <div className="contents flex-col items-center pb-[100px] font-bold">
+            <div id = "project" className="pt-20 h-[80vh]">
+                <div className="contents flex-col items-center font-bold">
                     <m.div
                     initial={{y:20 ,opacity: 0 }}
                     whileInView={{y:0, opacity: 1 }}
