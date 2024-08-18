@@ -77,7 +77,6 @@ export default function ShowDataPage() {
           autoClose: 3000,
         });
 
-        // Firebase'de güncellenen veriyi formDataList'e de yansıt
         setFormDataList((prevList) =>
           prevList.map((item) =>
             item.id === userFormData.id ? userFormData : item
@@ -103,7 +102,6 @@ export default function ShowDataPage() {
         localStorage.removeItem('userFormData');
         setUserFormData(null);
 
-        // Silinen veriyi formDataList'ten çıkar
         setFormDataList((prevList) =>
           prevList.filter((item) => item.id !== userFormData.id)
         );
@@ -190,7 +188,7 @@ export default function ShowDataPage() {
       <div>
         <p className="text-xl text-center font-bold text-green-800">Other Feedbacks</p>
       </div>
-      <Suspense fallback="Loading...">
+      <Suspense fallback={<div>Loading...</div>}>
         {formDataList.map((formData, index) => (
           <div key={index} className="border-2 gap-2 items-center flex flex-col border-stone-700 rounded-lg p-2 md:p-4 mb-4 w-96 md:w-[600px]">
             <p className="flex flex-col items-center"><strong>Name</strong> {formData.userName}</p>

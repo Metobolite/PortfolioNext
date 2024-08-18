@@ -30,10 +30,10 @@ const About = () => {
                     <div className="aboutText">
                         <h2>About Me</h2>
                         <h3>Metin Nabiyev based in Baku, Azerbaijan</h3>
-                        <p>Hello there, its Metin Nabiyev and i&apos;m interested in web programming. I&apos;m 21 years old and just graduated from Atatürk University - Computer Science.
+                        <p>Hello there, its Metin Nabiyev and I&apos;m interested in web programming. I&apos;m 21 years old and just graduated from Atatürk University - Computer Science.
                             <br />
                             <br /> 
-                            I&apos;m good at React.js, Next.js and i&apos;m using react/next to create this portfolio website.
+                            I&apos;m good at React.js, Next.js and I&apos;m using react/next to create this portfolio website.
                         </p>
                         <h1 className="font-bold text-xl pt-8">You can check more info about me and my skills 👇🏻</h1>
                         <div className="moreInfo">
