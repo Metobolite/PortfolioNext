@@ -34,7 +34,7 @@ const Home = () => {
                             <h1>Web Developer</h1>
                             <p>Hi. Its Metin Nabiyev. Front-End developer from Baku, Azerbaijan.</p>
                             <span>
-                                <a href="https://www.linkedin.com/in/metin-nabiyev-8409a0298/" alt="linkedin link" id="linkedin" rel="noreferrer" target="_blank">
+                                <a href="https://www.linkedin.com/in/metin-nabiyev-8409a0298/" id="linkedin" rel="noreferrer" target="_blank">
                                 <Image 
                                 src={linkedin}
                                 width={500}
@@ -44,7 +44,7 @@ const Home = () => {
 
                                 />
                                 </a>
-                                <a href="https://github.com/Metobolite" alt="github link" id="github" rel="noreferrer" target="_blank"><Image 
+                                <a href="https://github.com/Metobolite" id="github" rel="noreferrer" target="_blank"><Image 
                                 src={github}
                                 width={500}
                                 height={500}
