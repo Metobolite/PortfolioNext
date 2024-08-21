@@ -190,10 +190,10 @@ export default function ShowDataPage() {
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         {formDataList.map((formData, index) => (
-          <div key={index} className="border-2 gap-2 items-center flex flex-col border-stone-700 rounded-lg p-2 md:p-4 mb-4 w-96 md:w-[600px]">
-            <p className="flex flex-col items-center"><strong>Name</strong> {formData.userName}</p>
-            <p className="flex flex-col items-center"><strong>Header</strong> {formData.header}</p>
-            <p className="flex flex-col items-center"><strong>Message</strong> {formData.message}</p>
+          <div key={index} className="border-2 gap-2 items-center flex flex-col border-stone-700 rounded-lg p-2 md:p-4 mb-4 md:w-96 w-full">
+            <p className="font-bold">{formData.userName}</p>
+            <p className="italic">{formData.header}</p>
+            <p>{formData.message}</p>
           </div>
         ))}
       </Suspense>
