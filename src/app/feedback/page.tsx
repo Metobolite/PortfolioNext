@@ -116,7 +116,7 @@ export default function Page() {
       <button type="submit" disabled={isLoading} className="bg-slate-100 text-black rounded-md w-40 h-9 font-bold text-lg border-2 border-slate-600">
         {isLoading ? <CustomSpinner /> : 'Submit'}
       </button>
-      <Link href ="/ShowDataPage" className="rounded-md border-2 border-slate-600 bg-slate-100 text-xl font-bold h-9 transition ease-in-out delay-150 w-40 text-center hover:-translate-y-1 hover:scale-110 hover: duration-300 ...">All Feedbacks</Link>
+      <Link href ="/ShowDataPage" className="rounded-md border-2 border-slate-600 bg-slate-100 text-xl font-bold h-9 w-40 text-center">All Feedbacks</Link>
       <div style={{ zIndex: 200, position: 'relative' }}>
         <ToastContainer 
           position="top-right"

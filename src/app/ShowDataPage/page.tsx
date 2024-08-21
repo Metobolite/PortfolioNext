@@ -1,12 +1,14 @@
 "use client";
+
 import React, { useEffect, useState, Suspense } from 'react';
 import { collection, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from '../../../firebase/clientApp';
 import dynamic from 'next/dynamic';
-const ToastContainer = dynamic(() => import('react-toastify').then(mod => mod.ToastContainer), { ssr: false });
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
+import CustomSpinner from '../feedback/CustomSpinner';
 
+// FormData tip tanımı
 interface FormData {
   userName: string;
   email: string;
@@ -15,6 +17,9 @@ interface FormData {
   id: string;
 }
 
+// Dinamik bileşen yükleme
+const ToastContainer = dynamic(() => import('react-toastify').then(mod => mod.ToastContainer), { ssr: false });
+
 export default function ShowDataPage() {
   const [formDataList, setFormDataList] = useState<FormData[]>([]);
   const [userFormData, setUserFormData] = useState<FormData | null>(null);
@@ -22,7 +27,7 @@ export default function ShowDataPage() {
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       setLoading(true);
       try {
         const querySnapshot = await getDocs(collection(db, "feedback"));
@@ -48,9 +53,16 @@ export default function ShowDataPage() {
       } finally {
         setLoading(false);
       }
-    }
-
+    };
+    
     fetchData();
+
+    const intervalId = setInterval(() => {
+      fetchData();
+    }, 1000); // 60000 ms = 1 dakika
+  
+    // Temizlik işlevi
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleEditChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -63,7 +75,7 @@ export default function ShowDataPage() {
   };
 
   const handleSave = async () => {
-    if (userFormData && userFormData.id) {
+    if (userFormData?.id) {
       try {
         const docRef = doc(db, "feedback", userFormData.id);
         await updateDoc(docRef, {
@@ -72,6 +84,7 @@ export default function ShowDataPage() {
           header: userFormData.header,
           message: userFormData.message,
         });
+
         toast.success('Feedback updated successfully!', {
           position: "top-right",
           autoClose: 3000,
@@ -83,7 +96,7 @@ export default function ShowDataPage() {
           )
         );
         setIsEditing(false);
-        localStorage.setItem('userFormData', JSON.stringify(userFormData)); // Güncellenmiş veriyi kaydet
+        localStorage.setItem('userFormData', JSON.stringify(userFormData));
       } catch (error) {
         console.error("Error updating document: ", error);
         toast.error('An error occurred. Please try again.', {
@@ -95,7 +108,7 @@ export default function ShowDataPage() {
   };
 
   const handleDelete = async () => {
-    if (userFormData && userFormData.id) {
+    if (userFormData?.id) {
       try {
         const docRef = doc(db, "feedback", userFormData.id);
         await deleteDoc(docRef);
@@ -174,7 +187,7 @@ export default function ShowDataPage() {
               <p className="flex flex-col items-center"><strong>Header</strong> {userFormData.header}</p>
             </>
           )}
-          <div className=" pt-3 gap-1 items-center flex flex-row">
+          <div className="pt-3 gap-1 items-center flex flex-row">
             <button onClick={() => setIsEditing(!isEditing)} className="bg-slate-500 text-white rounded-md w-32 h-9">
               {isEditing ? 'Cancel' : 'Edit'}
             </button>
@@ -188,14 +201,8 @@ export default function ShowDataPage() {
       <div>
         <p className="text-xl text-center font-bold text-green-800">Other Feedbacks</p>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
-        {formDataList.map((formData, index) => (
-          <div key={index} className="border-2 gap-2 items-center flex flex-col border-stone-700 rounded-lg p-2 md:p-4 mb-4 w-96 md:w-[600px]">
-            <p className="flex flex-col items-center"><strong>Name</strong> {formData.userName}</p>
-            <p className="flex flex-col items-center"><strong>Header</strong> {formData.header}</p>
-            <p className="flex flex-col items-center"><strong>Message</strong> {formData.message}</p>
-          </div>
-        ))}
+      <Suspense fallback={<CustomSpinner />}>
+        <FormDataListBack formDataList={formDataList} />
       </Suspense>
       <div style={{ zIndex: 200, position: 'relative' }}>
         <ToastContainer 
@@ -211,5 +218,19 @@ export default function ShowDataPage() {
         />
       </div>
     </div>
+  );
+}
+
+export function FormDataListBack({ formDataList }: { formDataList: FormData[] }) {
+  return (
+    <>
+      {formDataList.map((formData, index) => (
+        <div key={index} className="border-2 gap-2 items-center flex flex-col border-stone-700 rounded-lg p-2 md:p-4 mb-4 md:w-96 w-full">
+          <p className="font-bold">{formData.userName}</p>
+          <p className="italic">{formData.header}</p>
+          <p>{formData.message}</p>
+        </div>
+      ))}
+    </>
   );
 }
