@@ -3,7 +3,7 @@ import {motion as m} from "framer-motion";
 import { useRef } from 'react';
 import Image from "next/image";
 import whatsapp from '../photos/whatsapp1.png'
-import mail from '../photos/mail2.png'
+import mail from '../photos/email.jpg'
 import linkedin from '../photos/linkedin2.png'
 
 export default function Contact() {
@@ -37,7 +37,7 @@ export default function Contact() {
                             </a>
                         </span>
                         <div className="mail">
-                            <h3 className="text-[#34485a]">Personal e-Mail</h3>
+                            <h3 className="text-[#34485a]">Personal E-Mail</h3>
                         </div>
                     </div>
                     <div className="numberAll transition ease-in-out delay-150 hover:-translate-y-3 duration-300">
@@ -59,7 +59,7 @@ export default function Contact() {
                     <div className="numberAll transition ease-in-out delay-150 hover:-translate-y-3 duration-300">
                         <span>
                             <a href="https://www.linkedin.com/in/metinnabiyev/" id="whatsapp" rel="noreferrer" target="_blank">
-                            <Image className ="flex items-center h-[2.8rem] w-[3.1rem] bg-cover [text-indent:-999px] "
+                            <Image className ="flex items-center h-[2.8rem] w-[2.8rem] bg-cover [text-indent:-999px] "
                             src={linkedin}
                             width={500}
                             height={500}

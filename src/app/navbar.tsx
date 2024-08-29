@@ -40,7 +40,7 @@ const Navbar = () => {
                     <button onClick={goTop} className={isOpen ? 'hidden' : 'flex'}><h1>Metin Nabiyev</h1></button>
                     <ul>
                         <Link href="/">Home</Link>
-                        <Link href="/project">Projects</Link>
+                        {/* <Link href="/project">Projects</Link> */}
                         <Link href="/about">About</Link>
                         <Link href="/contact">Contact</Link>
                         <Link href="/feedback" className="rounded-xl text-xl transition ease-in-out delay-150 bg-gray-500 hover:-translate-y-1 hover:scale-110 hover:bg-gray-600 duration-300 ...">Feedbacks</Link>
@@ -84,7 +84,7 @@ const Navbar = () => {
                         </div>
                             <li className="flex">
                                 <Link href="/" onClick={handleClick}>Home</Link>
-                                <Link href="/project" onClick={handleClick}>Projects</Link>
+                                {/* <Link href="/project" onClick={handleClick}>Projects</Link> */}
                                 <Link href="/about" onClick={handleClick}>About</Link>
                                 <Link href="/contact" onClick={handleClick}>Contact</Link>
                                 <Link href ="/feedback" className="rounded-xl text-xl transition ease-in-out delay-150 bg-gray-500 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 duration-300 ..." onClick={handleClick}>Feedbacks</Link>
