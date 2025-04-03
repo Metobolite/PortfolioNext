@@ -28,7 +28,7 @@ const Projects = () => {
                                     <br /> • Merchants push their products to database through Admin Panel. <br /> • Merchants can edit and delete their products.
                                 </p>
                             </div>
-                            <div className="first text-center md:w-1/2 md:p-10 pt-10 text-white md:border-r-2 border-white">
+                            <div className="first text-center md:w-1/2 md:p-10 pt-10 text-white border-white">
                                 <h2 className="text-white font-mono text-xl">AnkaSoft</h2>
                                 <h3 className="text-white">Software Development Unit</h3>
                                 <p className="text-white">01/2024 - 06/2024</p>
