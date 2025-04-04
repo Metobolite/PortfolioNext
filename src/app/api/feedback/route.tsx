@@ -2,10 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-// JSON dosyasının yolunu belirtin
 const filePath = path.join('C:', 'Users', 'hp', 'Documents', 'PortfolioNext', 'metin-portfolio', 'src', 'app', 'data', 'db.json');
 
-// GET isteğini işleyen fonksiyon
 export async function GET() {
   try {
     const jsonData = fs.readFileSync(filePath, 'utf8');
@@ -16,7 +14,6 @@ export async function GET() {
   }
 }
 
-// POST isteğini işleyen fonksiyon
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.json();

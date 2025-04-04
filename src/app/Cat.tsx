@@ -49,7 +49,6 @@ const Cat: React.FC = () => {
         break;
     }
   
-    // Konumu görünür alan içinde sınırlayın
     randomX = Math.max(0, Math.min(maxX, randomX));
     randomY = Math.max(navbarHeight, Math.min(maxY + navbarHeight, randomY));
   

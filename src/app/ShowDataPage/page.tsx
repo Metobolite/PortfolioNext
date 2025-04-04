@@ -83,7 +83,7 @@ export default function ShowDataPage() {
           )
         );
         setIsEditing(false);
-        localStorage.setItem('userFormData', JSON.stringify(userFormData)); // Güncellenmiş veriyi kaydet
+        localStorage.setItem('userFormData', JSON.stringify(userFormData));
       } catch (error) {
         console.error("Error updating document: ", error);
         toast.error('An error occurred. Please try again.', {
