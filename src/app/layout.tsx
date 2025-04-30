@@ -9,7 +9,7 @@ import { ViewTransitions } from 'next-view-transitions';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portoflio Web Page",
+  title: "Portfolio Web Page",
   description: "Metin Nabiyev's Portfolio Web Page",
 };
 
@@ -23,10 +23,12 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <div className="App">
-            <Navbar />
-            {children}
-            <Cat />
-            <Footer />
+            <div className="container-app">
+              {/* <Navbar /> */}
+              {children}
+              <Cat />
+              <Footer />
+            </div>
           </div>
         </body>
       </html>

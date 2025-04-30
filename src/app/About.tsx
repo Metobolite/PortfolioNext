@@ -7,11 +7,8 @@ import { useRef } from "react";
 
 const About = () => {
 
-    const scrollRef = useRef(null)
-
-
     return (
-        <div ref={scrollRef} style={{ overflow: "hidden" }}>
+        <div style={{ overflow: "hidden" }}>
             <div id="about" className="aboutAll">
                 <Image className = "relative bg-cover w-80 h-72 md:w-3/6 md:h-96 rounded-3xl ml-6"
                 src={coding}
@@ -24,7 +21,7 @@ const About = () => {
                 <m.div
                 initial={{y:20 ,opacity: 0 }}
                 whileInView={{y:0, opacity: 1 }}
-                viewport={{ root: scrollRef }}
+                viewport={{ once: true }}
                 transition={{ease: "easeInOut", duration: 1.2}}
                 >
                     <div className="aboutText">

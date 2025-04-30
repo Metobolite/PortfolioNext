@@ -6,7 +6,6 @@
 * {
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  color: #333;
   box-sizing: border-box;
   scrollbar-width: thin;
 }
@@ -21,6 +20,12 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #0D1117;
+}
+
+.container-app {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .content {
@@ -94,21 +99,20 @@ html {
   margin: 40px auto;
 }
 .hero-main{
-  @apply items-center flex-col pt-32 pb-20 md:flex-row flex gap-14 md:gap-40 relative justify-center;
+  @apply flex-col pt-20 pb-20 md:flex-row flex gap-8 relative;
 }
 .hero-text{
-  @apply flex flex-col max-w-[50rem] relative text-[20px] text-center
+  @apply flex flex-row relative text-[14px] text-[#C9D1D9] w-full justify-between
 }
 
 #linkedin{
   @apply items-center flex relative 
   justify-center h-6 w-6 bg-cover [text-indent:-999px] mt-[15px]
-  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
 }
 #github{
-  @apply  items-center flex relative justify-center h-6 w-[1.53rem] 
+  @apply  items-center flex relative justify-center h-6 w-6
   bg-cover [text-indent:-999px] mt-[15px]
-  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
+  
 }
 .home span{
   @apply flex gap-4 justify-center

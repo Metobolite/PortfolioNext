@@ -4,16 +4,15 @@ import {motion as m} from "framer-motion";
 
 
 const Projects = () => {
-    const scrollRef = useRef(null)
     
     return (
-        <div ref={scrollRef} style={{ overflow: "hidden" }}>
+        <div style={{ overflow: "hidden" }}>
             <div id="project" className="project">
                 <div className="contents flex-col bg-[#34485a] pb-[50px] font-bold">
                     <m.div
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ root: scrollRef }}
+                    viewport={{ once: true }}
                     transition={{ ease: "easeInOut", duration: 1.2 }}
                     >
                         <h1 className="text-center p-8 text-white">Work Experience</h1>
