@@ -1,5 +1,3 @@
-"use client"
-import {motion as m} from "framer-motion";
 import Image from "next/image";
 import coding from './photos/coding.jpg'
 import Link from "next/link";
@@ -18,12 +16,6 @@ const About = () => {
                 alt="about"
                 priority
                 />
-                <m.div
-                initial={{y:20 ,opacity: 0 }}
-                whileInView={{y:0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ease: "easeInOut", duration: 1.2}}
-                >
                     <div className="aboutText">
                         <h2>About Me</h2>
                         <h3>Metin Nabiyev based in Baku, Azerbaijan</h3>
@@ -37,7 +29,6 @@ const About = () => {
                             <Link href="about" className="text-white bg-[#404a4c] text-center p-4 rounded-xl font-bold hover:-translate-y-1 hover:scale-110 duration-300 delay-150">More About</Link>
                         </div>
                     </div>
-                </m.div>
             </div>
         </div>
      );
