@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./index.css";
-import Navbar from './navbar';
-import Footer from './Footer';
 import Cat from './Cat';
 import { ViewTransitions } from 'next-view-transitions';
 
@@ -24,10 +22,8 @@ export default function RootLayout({
         <body className={inter.className}>
           <div className="App">
             <div className="container-app">
-              {/* <Navbar /> */}
               <Cat />
               {children}
-              <Footer />
             </div>
           </div>
         </body>
