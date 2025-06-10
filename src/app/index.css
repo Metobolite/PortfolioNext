@@ -201,3 +201,27 @@ html {
 .footerSocial{
   @apply items-center flex gap-4
 }
+
+.card-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.2s;
+  opacity: 0;
+  z-index: 1;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}

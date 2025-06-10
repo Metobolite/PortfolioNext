@@ -1,16 +1,17 @@
 import Image from "next/image";
 import landing from './photos/landing.png'
 import landingrgy from './photos/landingrgy.png'
+import Card from "./card";
 
 
 const Projects = () => {
     return (
-        <div style={{ overflow: "hidden" }}>
+        <div>
             <div id="project" className="project">
-                <div className="contents flex-col pb-[50px] font-bold">
+                <div className="contents flex-col pb-[50px] font-bold px-2 py-3 md:py-0 md:px-0">
                     <h1 className="text-center p-4 md:p-8 text-white">Work Experience</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-baseline">
-                        <div className="first text-center text-white border-white">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+                        <Card>
                             <h2 className="text-white font-mono text-xl"><a href="https://rgydigital.com/" target="_blank">Rgydigital</a></h2>
                             <h3 className="text-white">FrontEnd Developer</h3>
                             <p className="text-white">05/2025 - Present</p>
@@ -27,8 +28,8 @@ const Projects = () => {
                                         />
                                 </a>
                             </div>
-                        </div>
-                        <div className="first text-center text-white border-white">
+                        </Card>
+                        <Card>
                             <h2 className="text-white font-mono text-xl"><a href="https://buck4bug.com/" target="_blank">Buck4Bug</a></h2>
                             <h3 className="text-white">FrontEnd Developer</h3>
                             <p className="text-white">01/2025 - Present</p>
@@ -45,8 +46,8 @@ const Projects = () => {
                                         />
                                 </a>
                             </div>
-                        </div>
-                        <div className="first text-center text-white border-white">
+                        </Card>
+                        <Card className="md:h-[300px]">
                             <h2 className="text-white font-mono text-xl">Buyur App</h2>
                             <h3 className="text-white">FrontEnd Developer</h3>
                             <p className="text-white">06/2024 - 01/2025</p>
@@ -54,8 +55,8 @@ const Projects = () => {
                             <p className="text-gray-200 text-left text-sm font-mono pl-6 pr-6">
                                 Developed an Admin Panel with customized pages and features for each merchant, allowing them to add, edit, and delete their products in the database.
                             </p>
-                        </div>
-                        <div className="first text-center pt-10 text-white border-white">
+                        </Card>
+                        <Card className="md:h-[300px]">
                             <h2 className="text-white font-mono text-xl">AnkaSoft</h2>
                             <h3 className="text-white">Software Development Unit</h3>
                             <p className="text-white">01/2024 - 06/2024</p>
@@ -63,7 +64,7 @@ const Projects = () => {
                             <p className="text-gray-200 text-left text-sm font-mono pl-6 pr-6">
                                 For a web app handling high user traffic (e.g., Black Friday), Virtual Machines are created and scaled based on CPU usage using Azure Functions triggered by Azure Event Hub, all managed via Kubernetes and API Management.
                             </p>
-                        </div>
+                        </Card>
                     </div>
                 </div>
             </div>
