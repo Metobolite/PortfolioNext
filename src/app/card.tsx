@@ -8,7 +8,6 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ children }) => {
   const cardRef = useRef<HTMLDivElement | null>(null);
-  const timeoutRef = useRef<number | null>(null);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     const card = cardRef.current;
