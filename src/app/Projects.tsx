@@ -7,7 +7,7 @@ const Projects = () => {
     return (
         <div>
             <div id="project" className="project">
-                <div className="contents flex-col pb-[50px] font-bold px-4 py-3 lg:py-0 lg:px-0">
+                <div className="contents flex-col font-bold px-4 py-3 lg:py-10 lg:px-0 lg:mb-32">
                     <h1 className="text-center p-4 md:p-8 text-white">
                         Work Experience
                     </h1>
