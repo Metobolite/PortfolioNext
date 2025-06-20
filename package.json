@@ -21,7 +21,7 @@
     "framer-motion": "^11.3.24",
     "lucide-react": "^0.519.0",
     "next": "^15.3.4",
-    "next-view-transitions": "^0.3.0",
+    "next-view-transitions": "^0.3.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-firebase-hooks": "^5.1.1",
