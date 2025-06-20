@@ -113,7 +113,7 @@ html {
 }
 
 .hero-text {
-  @apply flex flex-row relative text-[14px] text-[#C9D1D9] w-full justify-between
+  @apply flex flex-row relative text-[14px] text-[#C9D1D9] w-full justify-between gap-4
 }
 
 #linkedin {
@@ -165,7 +165,7 @@ html {
 }
 
 .contactAll {
-  @apply flex flex-col mt-[100px] md:pt-24 pb-40 text-[1.1rem] items-center;
+  @apply flex flex-col mt-[100px] pb-40 text-[1.1rem] items-center;
 }
 
 .contact {

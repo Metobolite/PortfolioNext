@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import metePhoto from './photos/metephoto.jpeg';
+import Link from 'next/link';
 
 const Home = () => {
     return (
@@ -100,15 +101,26 @@ const Home = () => {
                         </span>
                     </div>
                 </div>
-                <div className="px-4 lg:px-0">
+                <div className="flex flex-col md:flex-row justify-between px-4 lg:px-0 gap-4">
                     <div>
                         <h1 className="flex font-bold text-[12px] md:text-[14px] text-[#cbd6e1] mb-1">
-                            Focused on&nbsp;&nbsp;<span className="shining-text">flow, function, and feel.</span>
+                            Focused on&nbsp;&nbsp;
+                            <span className="shining-text">
+                                flow, function, and feel.
+                            </span>
                         </h1>
                         <p className="text-[10px] md:text-[12px] text-[#C9D1D9]">
-                            I'm a software engineer crafting fast, modern web
-                            experiences that look great and feel even better.
+                            I&apos;m a software engineer crafting fast, modern
+                            web experiences that look great and feel even
+                            better.
                         </p>
+                    </div>
+                    <div className="button-contact">
+                        <Link href="/contact" rel="noreferrer">
+                            <button className="contact-button w-full text-[14px] whitespace-nowrap rounded-sm p-2 text-[#cbd6e1] bg-gray-800 hover:bg-gray-700 hover:text-white transition ease-in-out duration-300">
+                                Contact Me
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
