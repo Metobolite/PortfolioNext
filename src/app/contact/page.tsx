@@ -1,16 +1,7 @@
-'use client';
-import { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
 import Link from 'next/link';
+import Copied from './copied';
 
 export default function Contact() {
-    const [copied, setCopied] = useState(false);
-
-    const copyEmail = () => {
-        navigator.clipboard.writeText('yourname@example.com');
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-    };
 
     return (
         <div className="min-h-screen flex items-center justify-center px-4 lg:px-0 text-[#cbd6e1]">
@@ -28,7 +19,7 @@ export default function Contact() {
                     <div className="button-home">
                         <Link href="/" rel="noreferrer">
                             <button className="contact-button w-full text-[14px] whitespace-nowrap rounded-sm p-2 text-[#cbd6e1] bg-gray-800 hover:bg-gray-700 hover:text-white transition ease-in-out duration-300">
-                               <i className="fa-solid fa-house"></i> &nbsp;Home
+                                <i className="fa-solid fa-house"></i> &nbsp;Home
                             </button>
                         </Link>
                     </div>
@@ -42,22 +33,7 @@ export default function Contact() {
                                 <p className="text-gray-300">
                                     nebiyev02@hotmail.com
                                 </p>
-                                <button
-                                    onClick={copyEmail}
-                                    className="text-sm px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded-md flex items-center transition ease-in-out duration-300"
-                                >
-                                    {copied ? (
-                                        <>
-                                            <Check className="w-4 h-4 mr-1" />{' '}
-                                            Copied!
-                                        </>
-                                    ) : (
-                                        <>
-                                            <Copy className="w-4 h-4 mr-1" />{' '}
-                                            Copy
-                                        </>
-                                    )}
-                                </button>
+                                <Copied />
                             </div>
                         </div>
                         <div>
