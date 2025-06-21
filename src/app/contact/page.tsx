@@ -4,19 +4,20 @@ import Copied from './copied';
 export default function Contact() {
 
     return (
-        <div className="min-h-screen flex items-center justify-center px-4 lg:px-0 text-[#cbd6e1]">
+        <div className="min-h-screen flex items-center justify-center px-4 my-12 lg:my-0 lg:px-0 text-[#cbd6e1]">
             <div className="w-full">
-                <div className="flex flex-col md:flex-row justify-between px-4 lg:px-0">
+                <div className="flex flex-col md:flex-row justify-between">
                     <div>
                         <h1 className="text-4xl font-bold mb-4">
                             Get in Touch
                         </h1>
                         <p className="mb-10 text-gray-400">
+                            Do you have any idea or a project in mind? <br />
                             Feel free to reach out via email, phone, or connect
                             with me through social media.
                         </p>
                     </div>
-                    <div className="button-home">
+                    <div className="button-home mb-10 lg:mb-0">
                         <Link href="/" rel="noreferrer">
                             <button className="contact-button w-full text-[14px] whitespace-nowrap rounded-sm p-2 text-[#cbd6e1] bg-gray-800 hover:bg-gray-700 hover:text-white transition ease-in-out duration-300">
                                 <i className="fa-solid fa-house"></i> &nbsp;Home

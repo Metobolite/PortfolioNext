@@ -111,7 +111,7 @@ html {
 }
 
 .hero-main {
-  @apply pt-4 px-4 lg:pl-0 lg:pr-0 md:pt-20 pb-6 flex-row flex gap-4 md:gap-8 relative;
+  @apply mt-12 px-4 lg:px-0 md:mt-20 pb-6 flex-row flex gap-4 md:gap-8 relative;
 }
 
 .hero-text {
