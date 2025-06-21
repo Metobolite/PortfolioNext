@@ -1,84 +1,99 @@
-"use client"
-import {motion as m} from "framer-motion";
-import { useRef } from 'react';
-import Image from "next/image";
-import whatsapp from '../photos/whatsapp1.png'
-import mail from '../photos/email.jpg'
-import linkedin from '../photos/linkedin2.png'
+import Link from 'next/link';
+import Copied from './copied';
 
 export default function Contact() {
 
-    const scrollRef = useRef(null);
-
     return (
-        <div ref={scrollRef} style={{ overflow: "hidden" }}>
-            <div id="contact" className="contactAll bg-white">
-                <m.div
-                initial={{x:-300,opacity:0}}
-                whileInView={{x:0,opacity:1}}
-                viewport={{ root: scrollRef }}
-                transition={{ease: "easeInOut", duration: 1.2}}
-                >
-                <div className="text-center">
-                    <h3 className="text-[#34485a] font-bold">Get in Touch</h3>
-                    <br />
-                    <h2 className="text-[#34485a] font-bold">You Can Contact Me From Here</h2>
-                </div>
-                <div className="mt-24 flex gap-12 md:gap-20 items-start ml-24 md:ml-0 md:items-center flex-col md:flex-row justify-center">
-                    <div className="mailAll transition ease-in-out delay-150 hover:-translate-y-3 duration-300">
-                        <span>
-                            <a href="mailto:nebiyev02@hotmail.com" id="mail" rel="noreferrer" target="_blank">
-                            <Image className = " flex h-[3.7rem] w-14 bg-cover [text-indent:-999px] rounded-[100%] items-center"
-                            src={mail}
-                            width={500}
-                            height={500}
-                            alt="mail icon"
-                            />
-                            </a>
-                        </span>
-                        <div className="mail">
-                            <h3 className="text-[#34485a]">Personal E-Mail</h3>
-                        </div>
+        <div className="min-h-screen flex items-center justify-center px-4 my-12 lg:my-0 lg:px-0 text-[#cbd6e1]">
+            <div className="w-full">
+                <div className="flex flex-col md:flex-row justify-between">
+                    <div>
+                        <h1 className="text-4xl font-bold mb-4">
+                            Get in Touch
+                        </h1>
+                        <p className="mb-10 text-gray-400">
+                            Do you have any idea or a project in mind? <br />
+                            Feel free to reach out via email, phone, or connect
+                            with me through social media.
+                        </p>
                     </div>
-                    <div className="numberAll transition ease-in-out delay-150 hover:-translate-y-3 duration-300">
-                        <span>
-                            <a href="https://wa.me/905528448322" id="whatsapp" rel="noreferrer" target="_blank">
-                            <Image className ="flex items-center h-[2.8rem] w-[3.1rem] bg-cover [text-indent:-999px] "
-                            src={whatsapp}
-                            width={500}
-                            height={500}
-                            alt="whatsapp icon"
-                            priority
-                            />
-                            </a>
-                        </span>
-                        <div className="number">
-                            <h3 className="text-[#34485a]">WhatsApp</h3>
-                        </div>
-                    </div>
-                    <div className="numberAll transition ease-in-out delay-150 hover:-translate-y-3 duration-300">
-                        <span>
-                            <a href="https://www.linkedin.com/in/metinnabiyev/" id="whatsapp" rel="noreferrer" target="_blank">
-                            <Image className ="flex items-center h-[2.8rem] w-[2.8rem] bg-cover [text-indent:-999px] "
-                            src={linkedin}
-                            width={500}
-                            height={500}
-                            alt="linkedin icon"
-                            priority
-                            />
-                            </a>
-                        </span>
-                        <div className="number">
-                            <h3 className="text-[#34485a]">LinkedIn</h3>
-                        </div>
+                    <div className="button-home mb-10 lg:mb-0">
+                        <Link href="/" rel="noreferrer">
+                            <button className="contact-button w-full text-[14px] whitespace-nowrap rounded-sm p-2 text-[#cbd6e1] bg-gray-800 hover:bg-gray-700 hover:text-white transition ease-in-out duration-300">
+                                <i className="fa-solid fa-house"></i> &nbsp;Home
+                            </button>
+                        </Link>
                     </div>
                 </div>
-                <p className="pt-32 text-center font-bold text-xl">I currently live in Baku, Azerbaijan. You can contact me anytime. 
-                    <br />
-                    <br />
-                    Just click on the icon you want to reach. Have a great day 😄 </p>
-                </m.div>
-            </div>    
-        </div> 
-     );
+
+                <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-6">
+                        <div>
+                            <h2 className="text-xl font-semibold">Email</h2>
+                            <div className="flex items-center space-x-3">
+                                <p className="text-gray-300">
+                                    nebiyev02@hotmail.com
+                                </p>
+                                <Copied />
+                            </div>
+                        </div>
+                        <div>
+                            <h2 className="text-xl font-semibold">Phone</h2>
+                            <p className="text-gray-300">
+                                <a
+                                    href="https://wa.me/994705550402"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:underline"
+                                >
+                                    +994 70 555 04 02
+                                </a>
+                            </p>
+                        </div>
+                        <div>
+                            <h2 className="text-xl font-semibold">Location</h2>
+                            <p className="text-gray-300">Baku, Azerbaijan</p>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col justify-between">
+                        <div className="space-y-4">
+                            <h2 className="text-xl font-semibold mb-2">
+                                Connect
+                            </h2>
+                            <div className="flex space-x-5 text-2xl">
+                                <a
+                                    href="https://github.com/Metobolite"
+                                    className="text-gray-400 hover:text-white transition ease-in-out duration-300"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i className="fab fa-github"></i>
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/metinnabiyev/"
+                                    className="text-gray-400 hover:text-white transition ease-in-out duration-300"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i className="fab fa-linkedin"></i>
+                                </a>
+                                <a
+                                    href="mailto:nebiyev02@hotmail.com"
+                                    className="text-gray-400 hover:text-white transition ease-in-out duration-300"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                >
+                                    <i className="fa-solid fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p className="text-sm text-gray-500 mt-10">
+                            Or DM me on any platform above.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }

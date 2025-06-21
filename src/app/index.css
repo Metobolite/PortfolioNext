@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
-  color: #333;
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   scrollbar-width: thin;
 }
-html, body {
+
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -21,6 +24,12 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #0D1117;
+}
+
+.container-app {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .content {
@@ -30,7 +39,7 @@ html, body {
   justify-content: center;
   position: relative;
 }
-  
+
 
 html {
   scroll-behavior: smooth;
@@ -39,11 +48,11 @@ html {
 .navbar {
   padding: 20px;
   margin: 0;
-  background-color: rgb(52,72,90);
+  background-color: rgb(52, 72, 90);
   font-weight: bold;
-  position: fixed; 
-  top: 0; 
-  width: 100%; 
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 200;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
   transition: background-color 0.3s ease-in-out;
@@ -54,115 +63,139 @@ html {
 }
 
 .navbar h1 {
-  @apply text-white; 
+  @apply text-white;
   border: 0;
   padding: 4px;
   font-size: 1.7rem;
 }
-.links{
+
+.links {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .navbar a {
   text-decoration: none;
   @apply transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 p-2;
 }
-.navbar ul{
+
+.navbar ul {
   @apply hidden md:flex;
   text-decoration: none;
   padding: 9px;
   font-size: large;
   @apply text-white;
 }
-.navbar li{
+
+.navbar li {
   @apply md:flex;
   text-decoration: none;
   font-size: large;
   @apply text-black gap-6 flex-col text-center;
 }
+
 .mobile-nav-close {
-  @apply flex h-[100vh] w-full bg-white items-center justify-center fixed inset-0 -translate-x-full; 
+  @apply flex h-[100vh] w-full bg-white items-center justify-center fixed inset-0 -translate-x-full;
   transition: transform 0.3s ease-in-out;
 }
+
 .mobile-nav-open {
-  @apply flex h-[100vh] w-full bg-white items-center justify-center fixed inset-0 translate-x-0; 
+  @apply flex h-[100vh] w-full bg-white items-center justify-center fixed inset-0 translate-x-0;
   transition: transform 0.3s ease-in-out;
-  z-index:200;
+  z-index: 200;
 }
+
 .content {
   margin: 40px auto;
 }
-.hero-main{
-  @apply items-center flex-col pt-32 pb-20 md:flex-row flex gap-14 md:gap-40 relative justify-center;
-}
-.hero-text{
-  @apply flex flex-col max-w-[50rem] relative text-[20px] text-center
+
+.hero-main {
+  @apply mt-12 px-4 lg:px-0 md:mt-20 pb-6 flex-row flex gap-4 md:gap-8 relative;
 }
 
-#linkedin{
-  @apply items-center flex relative 
-  justify-center h-6 w-6 bg-cover [text-indent:-999px] mt-[15px]
-  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
+.hero-text {
+  @apply flex flex-row relative text-[14px] text-[#C9D1D9] w-full justify-between gap-4
 }
-#github{
-  @apply  items-center flex relative justify-center h-6 w-[1.53rem] 
-  bg-cover [text-indent:-999px] mt-[15px]
-  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
+
+#linkedin {
+  @apply items-center flex relative justify-center h-6 w-6 bg-cover [text-indent:-999px] mt-[15px]
 }
-.home span{
-  @apply flex gap-4 justify-center
+
+#github {
+  @apply items-center flex relative justify-center h-6 w-6 bg-cover [text-indent:-999px] mt-[15px]
 }
-.contents{
+
+#mail {
+  @apply items-center flex relative justify-center h-6 w-6 bg-cover [text-indent:-999px] mt-[15px]
+}
+
+.home span {
+  @apply flex gap-2 justify-center
+}
+
+.contents {
   @apply flex
 }
-.aboutAll{
+
+.aboutAll {
   @apply mt-[150px] items-center justify-center flex flex-col md:flex-row text-center;
 }
 
-.aboutText{
+.aboutText {
   @apply md:w-[90%] md:text-left items-center pr-5 pl-5 md:pr-20 md:pl-20
 }
-.aboutText h2{
+
+.aboutText h2 {
   @apply pt-4 pl-2 text-[1.4rem] items-center text-center md:text-left text-green-700 font-bold
 }
-.aboutText h3{
+
+.aboutText h3 {
   @apply pt-6 md:pt-12 pl-2 text-[1.2rem] items-center md:text-left font-bold
 }
-.aboutText p{
-  @apply md:pl-2 pt-8 text-[1.1rem] items-center md:text-left 
 
+.aboutText p {
+  @apply md:pl-2 pt-8 text-[1.1rem] items-center md:text-left
 }
-.moreInfo{
-  @apply mt-12 flex gap-12 md:gap-20 items-center flex-col md:flex-row 
+
+.moreInfo {
+  @apply mt-12 flex gap-12 md:gap-20 items-center flex-col md:flex-row
 }
+
 .contactAll h3 {
   font-size: 1.4rem;
 }
-.contactAll{
-  @apply flex flex-col mt-[100px] md:pt-24 pb-40 text-[1.1rem] items-center;
+
+.contactAll {
+  @apply flex flex-col mt-[100px] pb-40 text-[1.1rem] items-center;
 }
-.contact{
-  @apply text-center md:text-left 
+
+.contact {
+  @apply text-center md:text-left
 }
-.contactInfo span{
+
+.contactInfo span {
   display: flex;
 }
-.mail{
+
+.mail {
   display: flex;
   flex-direction: column;
 }
-.mailAll{
+
+.mailAll {
   @apply flex items-center gap-4
 }
 
-.number{
-  @apply flex gap-[0.1rem] flex-col 
+.number {
+  @apply flex gap-[0.1rem] flex-col
 }
-.numberAll{
+
+.numberAll {
   @apply flex items-center gap-4
 }
-.footerAll{
+
+.footerAll {
   @apply px-[0] py-16 md:pl-64 md:pr-80;
   background-color: rgb(35, 49, 60);
   bottom: 0;
@@ -173,23 +206,82 @@ html {
   z-index: 1000;
 
 }
+
 .footerAll h3 {
   @apply text-[white] text-[larger];
 }
 
-.footer1{
+.footer1 {
   @apply md:flex text-center justify-center md:justify-between flex-wrap md:flex-row gap-8;
-  display:flex;
+  display: flex;
 }
 
-#linkedin2{
-  @apply flex items-center h-[1.4rem] w-[1.4rem] bg-cover [text-indent:-999px] 
-  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
+#linkedin2 {
+  @apply flex items-center h-[1.4rem] w-[1.4rem] bg-cover [text-indent:-999px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
 }
-#instagram{
-  @apply bg-cover flex items-center h-8 w-8 [text-indent:-999px] rounded-[100%] border-[white] 
-  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
+
+#instagram {
+  @apply bg-cover flex items-center h-8 w-8 [text-indent:-999px] rounded-[100%] border-[white] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
 }
-.footerSocial{
+
+.footerSocial {
   @apply items-center flex gap-4
+}
+
+.card-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.2s;
+  opacity: 0;
+  z-index: 1;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+@keyframes shine {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.shining-text {
+  position: relative;
+  color: #cbd6e1;
+  overflow: hidden;
+}
+
+.shining-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 90%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: blur(8px);
+  animation: shine 2.5s linear infinite;
+  pointer-events: none;
+  transform: skewX(-20deg);
 }

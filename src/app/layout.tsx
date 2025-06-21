@@ -1,35 +1,36 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./index.css";
-import Navbar from './navbar';
-import Footer from './Footer';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './index.css';
 import Cat from './Cat';
 import { ViewTransitions } from 'next-view-transitions';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Portoflio Web Page",
-  description: "Metin Nabiyev's Portfolio Web Page",
+    title: 'Portfolio Web Page',
+    description: "Metin Nabiyev's Portfolio Web Page",
+    icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return (
-    <ViewTransitions>
-      <html lang="en">
-        <body className={inter.className}>
-          <div className="App">
-            <Navbar />
-            {children}
-            <Cat />
-            <Footer />
-          </div>
-        </body>
-      </html>
-    </ViewTransitions>
-  );
+    return (
+        <ViewTransitions>
+            <html lang="en">
+                <body className={inter.className}>
+                    <div className="App">
+                        <div className="container-app">
+                            <Cat />
+                            {children}
+                        </div>
+                    </div>
+                </body>
+            </html>
+        </ViewTransitions>
+    );
 }
