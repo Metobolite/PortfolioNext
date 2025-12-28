@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     title: 'Portfolio Web Page',
     description: "Metin Nabiyev's Portfolio Web Page",
     icons: {
-    icon: '/logo.png',
-  },
+        icon: '/logo.png',
+    },
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
                 <body className={inter.className}>
                     <div className="App">
                         <div className="container-app">
-                            <Cat />
+                            {/* <Cat /> */}
                             {children}
                         </div>
                     </div>

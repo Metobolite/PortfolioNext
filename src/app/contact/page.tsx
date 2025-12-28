@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Copied from './copied';
 
 export default function Contact() {
-
     return (
         <div className="min-h-screen flex items-center justify-center px-4 my-12 lg:my-0 lg:px-0 text-[#cbd6e1]">
             <div className="w-full">
@@ -41,18 +40,18 @@ export default function Contact() {
                             <h2 className="text-xl font-semibold">Phone</h2>
                             <p className="text-gray-300">
                                 <a
-                                    href="https://wa.me/994705550402"
+                                    href="https://wa.me/4915510957784"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:underline"
                                 >
-                                    +994 70 555 04 02
+                                    +49 155 109 577 84
                                 </a>
                             </p>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold">Location</h2>
-                            <p className="text-gray-300">Baku, Azerbaijan</p>
+                            <p className="text-gray-300">Dresden, Germany</p>
                         </div>
                     </div>
 

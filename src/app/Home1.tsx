@@ -22,7 +22,8 @@ const Home = () => {
                                 Metin Nabiyev
                             </h1>
                             <p className="text-[12px] md:text-[14px] text-[#C9D1D9]">
-                                Front-End developer from Baku, Azerbaijan.
+                                Front-End developer from Azerbaijan based in
+                                Dresden, Germany.
                             </p>
                         </div>
                         <span>
@@ -113,6 +114,12 @@ const Home = () => {
                             I&apos;m a software engineer crafting fast, modern
                             web experiences that look great and feel even
                             better.
+                        </p>
+                        <p className="text-[10px] md:text-[12px] text-[#C9D1D9] mt-2">
+                            Professional at Next.js · React.js · JavaScript ·
+                            TypeScript · HTML · CSS · SCSS · Supabase ·
+                            Real-time Apps · Auth Systems · Python · C++ · C# ·
+                            Algorithms · Computer Vision · AI Systems
                         </p>
                     </div>
                     <div className="button-contact">
