@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import landing from './photos/landing.png';
-import landingrgy from './photos/landingrgy.png';
+import landing from './photos/landing.webp';
+import landingrgy from './photos/landingrgy.webp';
 import Card from './card';
 
 const Projects = () => {
@@ -22,7 +22,7 @@ const Projects = () => {
                                 </a>
                             </h2>
                             <h3 className="text-white">FrontEnd Developer</h3>
-                            <p className="text-white">05/2025 - Present</p>
+                            <p className="text-white">03/2025 - 09/2025</p>
                             <hr className="my-2 border-white" />
                             <p className="text-gray-200 text-left text-sm font-mono pl-6 pr-6">
                                 Currently working at RGY Digital, creating the
@@ -37,6 +37,7 @@ const Projects = () => {
                                     <Image
                                         src={landingrgy}
                                         alt="Buck4Bug Preview"
+                                        sizes="(max-width: 768px) calc(100vw - 2rem), 352px"
                                         className="w-full h-auto rounded-lg"
                                     />
                                 </a>
@@ -49,7 +50,7 @@ const Projects = () => {
                                 </a>
                             </h2>
                             <h3 className="text-white">FrontEnd Developer</h3>
-                            <p className="text-white">01/2025 - Present</p>
+                            <p className="text-white">01/2025 - 09/2025</p>
                             <hr className="my-2 border-white" />
                             <p className="text-gray-200 text-left text-sm font-mono pl-6 pr-6">
                                 Developed a full marketing website for Buck4Bug,
@@ -65,6 +66,7 @@ const Projects = () => {
                                     <Image
                                         src={landing}
                                         alt="Buck4Bug Preview"
+                                        sizes="(max-width: 768px) calc(100vw - 2rem), 352px"
                                         className="w-full h-auto rounded-lg"
                                     />
                                 </a>

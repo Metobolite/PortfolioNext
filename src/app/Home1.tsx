@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import metePhoto from './photos/metephoto.jpeg';
+import metePhoto from './photos/metephoto.webp';
 import Link from 'next/link';
 
 const Home = () => {
@@ -10,11 +10,12 @@ const Home = () => {
                     <Image
                         className="bg-[50%] bg-cover w-12 h-12 md:w-16 md:h-16 rounded-[9999px]"
                         src={metePhoto}
-                        width={500}
-                        height={500}
-                        quality={100}
+                        width={256}
+                        height={256}
+                        quality={80}
+                        sizes="(max-width: 768px) 48px, 64px"
                         alt="metin"
-                        priority={false}
+                        priority
                     />
                     <div className="hero-text">
                         <div>
