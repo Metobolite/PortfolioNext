@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Github, House, Linkedin, Mail } from 'lucide-react';
 import Copied from './copied';
 
 export default function Contact() {
@@ -19,7 +20,11 @@ export default function Contact() {
                     <div className="button-home mb-10 lg:mb-0">
                         <Link href="/" rel="noreferrer">
                             <button className="contact-button w-full text-[14px] whitespace-nowrap rounded-sm p-2 text-[#cbd6e1] bg-gray-800 hover:bg-gray-700 hover:text-white transition ease-in-out duration-300">
-                                <i className="fa-solid fa-house"></i> &nbsp;Home
+                                <House
+                                    className="inline-block h-4 w-4"
+                                    aria-hidden="true"
+                                />{' '}
+                                Home
                             </button>
                         </Link>
                     </div>
@@ -67,7 +72,7 @@ export default function Contact() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <i className="fab fa-github"></i>
+                                    <Github aria-label="GitHub" />
                                 </a>
                                 <a
                                     href="https://www.linkedin.com/in/metinnabiyev/"
@@ -75,7 +80,7 @@ export default function Contact() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <i className="fab fa-linkedin"></i>
+                                    <Linkedin aria-label="LinkedIn" />
                                 </a>
                                 <a
                                     href="mailto:nebiyev02@hotmail.com"
@@ -83,7 +88,7 @@ export default function Contact() {
                                     rel="noreferrer"
                                     target="_blank"
                                 >
-                                    <i className="fa-solid fa-envelope"></i>
+                                    <Mail aria-label="Email" />
                                 </a>
                             </div>
                         </div>
